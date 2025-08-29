@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* Neon Colors */
+  --neon-pink: #ff0080;
+  --neon-blue: #0080ff;
+  --neon-green: #00ff80;
+  --neon-yellow: #ffff00;
+  --neon-orange: #ff8000;
+  --neon-purple: #8000ff;
+  --neon-cyan: #00ffff;
+  --neon-red: #ff0040;
+  --neon-lime: #80ff00;
+  --neon-magenta: #ff00ff;
+  --neon-electric-blue: #007fff;
+  --neon-hot-pink: #ff1493;
+  --neon-spring-green: #00ff7f;
+  --neon-acid-green: #b0ff00;
+  --neon-violet: #9400d3;
+  --neon-turquoise: #00ced1;
+  --neon-coral: #ff4500;
+  --neon-aqua: #00bfff;
+  --neon-chartreuse: #7fff00;
+  --neon-fuchsia: #ff00c0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
