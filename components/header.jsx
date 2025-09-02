@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { IoSearchOutline } from "react-icons/io5";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -10,7 +12,9 @@ const Header = () => {
         {/* Left - Logo */}
         <div>
           <nav>
-            <a>
+            <a 
+            href="http://localhost:3000/"
+            className="cursor-pointer">
               <Image
               src="/images/baTu-website-logo.png"
               alt="Header logo BaTu png image"
@@ -30,14 +34,40 @@ const Header = () => {
         </nav>
 
         {/* Right - Search */}
-        <div className="flex gap-2 group">
-          <IoSearchOutline size={20} />
+        <div className="flex gap-2 group w-[150px]">
+          <IoSearchOutline size={20}/>
 
           <input
             type="text"
             placeholder="Search"
             className="!outline-none text-gray-800 transition-all duration-300 w-0 focus:w-[120px] group-hover:w-[120px]"
           />
+        </div>
+
+        {/* Social Media */}
+        <div className="flex gap-[5px]">
+          <div>
+            <FaFacebookF size={20} className="transition-all duration-300 hover:text-white hover:bg-blue-800  rounded-[30px]" /> 
+          </div>
+
+          <div className="
+            flex items-center justify-center 
+            cursor-pointer 
+            transition-all duration-300
+            hover:bg-gradient-to-tr 
+            hover:from-pink-500 
+            hover:via-red-500 
+            hover:to-yellow-500
+            hover:scale-110
+            rounded-[8px]
+          ">
+            <FaInstagram size={20} className="text-gray-800" />
+          </div>
+
+
+          <div></div>
+
+          <div></div>
         </div>
       </div>
     </header>
