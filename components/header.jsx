@@ -12,14 +12,12 @@ const Header = () => {
         {/* Left - Logo */}
         <div>
           <nav>
-            <a 
-            href="http://localhost:3000/"
-            className="cursor-pointer">
+            <a href="http://localhost:3000/" className="cursor-pointer">
               <Image
-              src="/images/baTu-website-logo.png"
-              alt="Header logo BaTu png image"
-              width={70}
-              height={70}
+                src="/images/baTu-website-logo.png"
+                alt="Header logo BaTu png image"
+                width={70}
+                height={70}
               />
             </a>
           </nav>
@@ -27,15 +25,23 @@ const Header = () => {
 
         {/* Center - Nav links */}
         <nav className="flex gap-8 text-gray-800 font-medium">
-          <a href="/home" className="!no-underline">Home</a>
-          <a href="/about" className="!no-underline">About</a>
-          <a href="/services" className="!no-underline">Services</a>
-          <a href="/contact" className="!no-underline">Contact</a>
+          <a href="/home" className="!no-underline">
+            Home
+          </a>
+          <a href="/about" className="!no-underline">
+            About
+          </a>
+          <a href="/services" className="!no-underline">
+            Services
+          </a>
+          <a href="/contact" className="!no-underline">
+            Contact
+          </a>
         </nav>
 
         {/* Right - Search */}
         <div className="flex gap-2 group w-[150px]">
-          <IoSearchOutline size={20}/>
+          <IoSearchOutline size={20} />
 
           <input
             type="text"
@@ -47,10 +53,16 @@ const Header = () => {
         {/* Social Media */}
         <div className="flex gap-[5px]">
           <div>
-            <FaFacebookF size={20} className="transition-all duration-300 hover:text-white hover:bg-blue-800  rounded-[30px]" /> 
+            <a href="https://www.facebook.com/batbayar.tuguldur.2025">
+              <FaFacebookF
+                size={20}
+                className="transition-all duration-300 hover:text-white hover:bg-blue-800  rounded-[30px]"
+              />
+            </a>
           </div>
 
-          <div className="
+          <div
+            className="
             flex items-center justify-center 
             cursor-pointer 
             transition-all duration-300
@@ -60,10 +72,10 @@ const Header = () => {
             hover:to-yellow-500
             hover:scale-110
             rounded-[8px]
-          ">
+          "
+          >
             <FaInstagram size={20} className="text-gray-800" />
           </div>
-
 
           <div></div>
 
