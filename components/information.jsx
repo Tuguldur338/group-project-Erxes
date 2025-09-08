@@ -4,17 +4,19 @@ import { useState, useEffect } from "react";
 
 const Information = () => {
   const [address, setAddress] = useState("");
-  const [savedAddress, setSavedAddress] = useState(null);
+  const [savedAddresses, setSavedAddresses] = useState([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem("deliveryAddress");
-    if (stored) setSavedAddress(stored);
+    const stored = localStorage.getItem("deliveryAddresses");
+    if (stored) setSavedAddresses(JSON.parse(stored));
   }, []);
 
   const handleLogin = () => {
     if (address.trim()) {
-      localStorage.setItem("deliveryAddress", address);
-      setSavedAddress(address);
+      const updated = [...savedAddresses, address];
+      localStorage.setItem("deliveryAddresses", JSON.stringify(updated));
+      setSavedAddresses(updated);
+      setAddress("");
       alert("Address saved!");
     } else {
       alert("Please enter your address.");
@@ -27,7 +29,6 @@ const Information = () => {
         Enter Your Delivery Information
       </h2>
 
-      {/* Address input + login button */}
       <div className="flex gap-3">
         <input
           type="text"
@@ -36,6 +37,7 @@ const Information = () => {
           onChange={(e) => setAddress(e.target.value)}
           className="px-4 py-2 w-[300px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
         />
+
         <button
           onClick={handleLogin}
           className="px-6 py-2 bg-amber-600 text-white !rounded-[8px] hover:bg-amber-700 transition-all"
@@ -44,11 +46,16 @@ const Information = () => {
         </button>
       </div>
 
-      {/* Saved address */}
-      {savedAddress && (
-        <p className="mt-4 text-gray-700">
-          Saved address: <span className="font-medium">{savedAddress}</span>
-        </p>
+      {/* Saved addresses list */}
+      {savedAddresses.length > 0 && (
+        <div className="mt-6 w-[300px] text-gray-700">
+          <h3 className="font-semibold mb-2">Saved addresses:</h3>
+          <ul className="list-disc list-inside space-y-1">
+            {savedAddresses.map((addr, index) => (
+              <li key={index}>{addr}</li>
+            ))}
+          </ul>
+        </div>
       )}
     </section>
   );
