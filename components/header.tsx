@@ -1,11 +1,12 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header className="flex sticky top-0 z-[10] h-[100px] bg-amber-100 items-center px-6">
       <div className="flex w-full justify-between items-center">

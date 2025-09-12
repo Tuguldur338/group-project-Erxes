@@ -1,18 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 
-const Information = () => {
-  const [address, setAddress] = useState("");
-  const [savedAddresses, setSavedAddresses] = useState([]);
+const Information: React.FC = () => {
+  const [address, setAddress] = useState<string>("");
+  const [savedAddresses, setSavedAddresses] = useState<string[]>([]);
 
   useEffect(() => {
     const stored = localStorage.getItem("deliveryAddresses");
     if (stored) setSavedAddresses(JSON.parse(stored));
   }, []);
 
-  const handleAddress = () => {
+  const handleAddress = (): void => {
     if (address.trim()) {
       const updated = [...savedAddresses, address];
       localStorage.setItem("deliveryAddresses", JSON.stringify(updated));
@@ -24,7 +24,7 @@ const Information = () => {
     }
   };
 
-  const handleDelete = (index) => {
+  const handleDelete = (index: number): void => {
     const updated = savedAddresses.filter((_, i) => i !== index);
     localStorage.setItem("deliveryAddresses", JSON.stringify(updated));
     setSavedAddresses(updated);

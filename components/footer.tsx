@@ -1,6 +1,8 @@
-const Footer = () => {
+import React from "react";
+
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-amber-100 text-gray-950 px-8 py-10 h-[230px]">
+    <footer className="bg-amber-100 text-gray-950 px-8 py-10 h-[230px] mt-[320px]">
       {" "}
       <div className="max-w-screen-xl mx-auto">
         {" "}
