@@ -31,52 +31,60 @@ const Information: React.FC = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center py-10">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">
-        Enter your delivery address
-      </h2>
+    <section className="relative flex flex-col items-center justify-center w-full h-screen">
+      {/* Background image */}
+      <div className="absolute inset-0 bg-[url('/images/delivery-background-image.png')] bg-cover bg-center"></div>
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
-      <div className="flex gap-3">
-        <input
-          type="text"
-          placeholder="Enter your address..."
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          className="px-4 py-2 w-[300px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
-        />
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center">
+        <h2 className="text-2xl font-bold mb-4 text-white">
+          Enter your delivery address
+        </h2>
 
-        <Button
-          variant="success"
-          onClick={handleAddress}
-          className="px-6 py-2 bg-amber-600 text-white !rounded-[8px] hover:bg-amber-700 transition-all"
-        >
-          Save address
-        </Button>
-      </div>
+        <div className="flex gap-3">
+          <input
+            type="text"
+            placeholder="Enter your address..."
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            className="px-4 py-2 w-[300px] rounded-lg border border-gray-300 text-white placeholder-white bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
 
-      {savedAddresses.length > 0 && (
-        <div className="mt-6 w-[300px] text-gray-700">
-          <h3 className="font-semibold mb-2">Saved addresses:</h3>
-          <ul className="space-y-2">
-            {savedAddresses.map((addr, index) => (
-              <li
-                key={index}
-                className="flex justify-between items-center bg-gray-100 px-3 py-2 rounded-lg"
-              >
-                <span>{addr}</span>
-
-                <Button
-                  variant="danger"
-                  onClick={() => handleDelete(index)}
-                  className="px-3 py-1 bg-red-600 text-white text-sm !rounded-lg hover:bg-red-700 transition-all duration-300"
-                >
-                  Delete
-                </Button>
-              </li>
-            ))}
-          </ul>
+          <Button
+            variant="success"
+            onClick={handleAddress}
+            className="px-6 py-2 bg-green-600 text-white !rounded-[8px] hover:bg-green-700 transition-all"
+          >
+            Save address
+          </Button>
         </div>
-      )}
+
+        {savedAddresses.length > 0 && (
+          <div className="mt-6 w-[300px] text-white">
+            <h3 className="font-semibold mb-2">Saved addresses:</h3>
+            <ul className="space-y-2">
+              {savedAddresses.map((addr, index) => (
+                <li
+                  key={index}
+                  className="flex justify-between items-center bg-green-900/50 px-3 py-2 rounded-lg"
+                >
+                  <span>{addr}</span>
+
+                  <Button
+                    variant="danger"
+                    onClick={() => handleDelete(index)}
+                    className="px-3 py-1 bg-red-600 text-white text-sm !rounded-lg hover:bg-red-700 transition-all duration-300"
+                  >
+                    Delete
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </section>
   );
 };
