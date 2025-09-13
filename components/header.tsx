@@ -53,7 +53,7 @@ const Header: React.FC = () => {
 
         {/* Social Media */}
         <div className="flex gap-[5px]">
-          <div>
+          <div className="hover:scale-[1.2] transition-all duration-300">
             <a href="https://www.facebook.com/batbayar.tuguldur.2025">
               <FaFacebookF
                 size={20}
@@ -75,7 +75,13 @@ const Header: React.FC = () => {
             rounded-[8px]
           "
           >
-            <FaInstagram size={20} className="text-gray-800" />
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaInstagram size={20} className="text-gray-800" />
+            </a>
           </div>
 
           <div></div>

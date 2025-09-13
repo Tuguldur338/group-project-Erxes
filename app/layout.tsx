@@ -5,7 +5,6 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Information from "@/components/information";
 import Products from "@/components/products";
 
 const geistSans = Geist({
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <Header />
         <Products />
-        <Information />
         <Footer />
         {children}
       </body>
