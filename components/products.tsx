@@ -108,15 +108,13 @@ const Products: React.FC = () => {
               </p>
             </div>
 
-            <a href="/information">
-              <Button
-                variant={loggedIn ? "secondary" : "success"}
-                onClick={handleLogInButton}
-                className="!text-white"
-              >
-                {loggedIn ? "Logged in" : "Log in"}
-              </Button>
-            </a>
+            <Button
+              variant={loggedIn ? "secondary" : "success"}
+              onClick={handleLogInButton}
+              className="!text-white"
+            >
+              {loggedIn ? "Logged in" : "Log in"}
+            </Button>
           </div>
 
           {/* Cart Items Summary */}
@@ -135,11 +133,11 @@ const Products: React.FC = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="flex flex-wrap gap-6 content-center justify-center">
+        <div className="flex flex-wrap gap-6 content-center justify-center max-w-screen w-[100%]">
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-white p-6 rounded-lg shadow-md h-[500px] w-[400px] hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col"
+              className="bg-white p-6 rounded-lg shadow-md h-[500px] max-w-full w-[99%] hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col"
             >
               <div className="w-full h-[250px] bg-gray-200 rounded-[10px] flex items-center justify-center">
                 <Image

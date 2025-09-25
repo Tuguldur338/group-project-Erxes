@@ -8,7 +8,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 const Header: React.FC = () => {
   return (
     <header className="flex sticky top-0 z-50 h-[100px] bg-gradient-to-r from-green-200 via-green-300 to-green-100 shadow-md items-center px-6">
-      <div className="flex w-full justify-between items-center max-w-screen-xl mx-auto">
+      <div className="flex max-w-full w-[98%] justify-between items-center mx-auto">
         {/* Left - Logo */}
         <div className="flex items-center">
           <a href="http://localhost:3000/" className="cursor-pointer">
@@ -28,44 +28,69 @@ const Header: React.FC = () => {
           <div className="relative group">
             <a
               href="#"
-              className="cursor-pointer relative after:content-[''] after:block after:w-0 after:h-[2px] after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full"
+              className="cursor-pointer !no-underline relative after:content-[''] after:block after:w-0 after:h-[2px] after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full"
             >
               Services
             </a>
 
             {/* Dropdown content */}
-            <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
+            <div className="absolute left-0 mt-2 w-[125px] bg-white rounded-md shadow-lg z-50 opacity-0 group-hover:!opacity-100 transition-all duration-300">
               <a
                 href="#"
-                className="block px-4 py-2 text-gray-900 hover:bg-green-100 hover:text-green-800"
+                className="block px-4 py-2 !no-underline text-gray-900 hover:bg-green-100 hover:text-green-800"
               >
                 Full Truckload
               </a>
+
               <a
                 href="#"
-                className="block px-4 py-2 text-gray-900 hover:bg-green-100 hover:text-green-800"
+                className="block px-4 py-2 !no-underline text-gray-900 hover:bg-green-100 hover:text-green-800"
               >
                 Part Truckload
               </a>
+
               <a
                 href="#"
-                className="block px-4 py-2 text-gray-900 hover:bg-green-100 hover:text-green-800"
+                className="block px-4 py-2 !no-underline text-gray-900 hover:bg-green-100 hover:text-green-800"
               >
                 LTL Shipping
               </a>
             </div>
           </div>
 
-          <a
-            href="/about"
-            className="relative cursor-pointer after:content-[''] after:block after:w-0 after:h-[2px] after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full"
-          >
-            About
-          </a>
+          {/* Company dropdown */}
+          <div className="relative group">
+            <a
+              href="/Company"
+              className="cursor-pointer !no-underline relative after:content-[''] after:block after:w-0 after:h-[2px] after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Company
+            </a>
+
+            {/* Dropdown content company */}
+            <div className="absolute left-0 mt-2 w-[125px] bg-white rounded-md shadow-lg z-50 opacity-0 group-hover:!opacity-100 transition-all duration-300">
+              <a
+                href="#"
+                className="block px-4 py-2 !no-underline text-gray-900 hover:bg-green-100 hover:text-green-800"
+              >
+                About
+              </a>
+
+              <a
+                href="#"
+                className="block px-4 py-2 !no-underline text-gray-900 hover:bg-green-100 hover:text-green-800"
+              ></a>
+
+              <a
+                href="#"
+                className="block px-4 py-2 !no-underline text-gray-900 hover:bg-green-100 hover:text-green-800"
+              ></a>
+            </div>
+          </div>
 
           <a
             href="/contact"
-            className="relative cursor-pointer after:content-[''] after:block after:w-0 after:h-[2px] after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full"
+            className="relative cursor-pointer !no-underline after:content-[''] after:block after:w-0 after:h-[2px] after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full"
           >
             Contact
           </a>
@@ -88,18 +113,21 @@ const Header: React.FC = () => {
             href="https://www.facebook.com/batbayar.tuguldur.2025"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white text-blue-800 hover:bg-blue-800 hover:text-white transition-all duration-300 shadow-md"
+            className="flex items-end justify-center w-10 h-10 rounded-full bg-white text-blue-800 hover:!bg-[#0866ff] hover:!text-white transition-all duration-300 shadow-md"
           >
-            <FaFacebookF />
+            <FaFacebookF size={34} />
           </a>
 
           <a
             href="https://www.instagram.com/"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white text-pink-500 hover:bg-gradient-to-tr hover:from-pink-500 hover:via-red-500 hover:to-yellow-400 hover:text-white transition-all duration-300 shadow-md"
+            className="group relative flex items-center justify-center w-10 h-10 rounded-full overflow-hidden shadow-md bg-white hover:!bg-pink-600 transition-all duration-300"
           >
-            <FaInstagram />
+            <FaInstagram
+              size={28}
+              className="relative text-pink-500 hover:text-white transition-all duration-300"
+            />
           </a>
         </div>
       </div>
